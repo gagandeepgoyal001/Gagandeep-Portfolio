@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +9,31 @@
   <meta name="keywords" content="Gagandeep Goyal, Portfolio, Web Developer, Programmer, Mathematics, AI, Leadership" />
   <!-- Favicon (optional) -->
   <link rel="icon" href="assets/Gagan.png" type="image/png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Theme Toggle and Back to Top Button -->
+  <div class="theme-toggle">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+  </div>
+  
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
   <!-- Header & Navigation -->
   <header class="header">
     <div class="container nav-container">
@@ -22,6 +43,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -32,79 +54,110 @@
   <section id="hero" class="hero-section">
     <div class="container hero-container">
       <div class="hero-text">
+        <span class="hero-subtitle">Welcome to my portfolio</span>
         <h2>Hi, I'm Gagandeep Goyal</h2>
         <p>
           A dedicated professional with a passion for programming, mathematics, and leveraging technology to solve real-world problems.
         </p>
         <div class="hero-buttons">
-          <a href="#contact" class="btn">Get In Touch</a>
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
           <a href="https://www.linkedin.com/in/gagan-deep-goyal/" target="_blank" class="btn btn-secondary">
-            <!-- LinkedIn SVG Icon -->
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.269c-.966 0-1.75-.79-1.75-1.77s.784-1.77 1.75-1.77 1.75.79 1.75 1.77-.784 1.77-1.75 1.77zm13.5 11.269h-3v-5.604c0-1.337-.026-3.062-1.867-3.062-1.87 0-2.157 1.46-2.157 2.968v5.698h-3v-10h2.881v1.367h.041c.402-.761 1.384-1.562 2.847-1.562 3.044 0 3.608 2.005 3.608 4.613v5.582z"/>
-            </svg>
+            <i class="fab fa-linkedin icon"></i>
             LinkedIn
           </a>
-          <a href="assets/GagandeepGoyalResume.pdf" target="_blank" class="btn btn-secondary">Download CV</a>
+          <a href="assets/GagandeepGoyalResume.pdf" target="_blank" class="btn btn-secondary">
+            <i class="fas fa-file-download icon"></i>
+            Download CV
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Skills</span>
+          </div>
         </div>
       </div>
       <div class="hero-image">
         <img src="assets/Gagan.png" alt="Gagandeep Goyal Profile Image" />
+        <div class="blob"></div>
       </div>
     </div>
+    <div class="scroll-indicator"></div>
   </section>
 
   <!-- About Me Section -->
   <section id="about" class="about-section">
     <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a highly analytical and results-driven professional with a strong foundation in mathematics, programming, sales, and logistics. My journey, shaped by perseverance and adaptability, has allowed me to excel in multiple domains, from freight brokerage and business development to AI-driven automation and web development. I thrive in dynamic environments where problem-solving and strategic thinking are key.
-      </p>
-      <p><strong class="bullet-heading">🔹 Key Skills & Expertise</strong></p>
-      <ul>
-        <li><strong>Programming & Technology:</strong> C, C++, Python, JavaScript, AI tools, automation</li>
-        <li><strong>Mathematics & Analysis:</strong> Probability, data handling, geometry, logical reasoning</li>
-        <li><strong>Sales & Business Development:</strong> Cold calling, email marketing, negotiation, customer persuasion</li>
-        <li><strong>Logistics & Freight Brokerage:</strong> Dispatching, TMS, DAT, Truckstop, AFM</li>
-        <li><strong>Financial Management:</strong> Budgeting, investments, cryptocurrency & stock trading</li>
-        <li><strong>Leadership & Event Management:</strong> Team coordination, financial planning, public speaking</li>
-      </ul>
-      <p><strong class="bullet-heading">🔹 Experience & Achievements</strong></p>
-      <ul>
-        <li><strong>Freight Broker & Dispatcher (Varstar Alliance & Elefante Express):</strong> Led high-value sales ($3,000 max, $1,000–$1,300 avg.), managed clients, and optimized logistics.</li>
-        <li><strong>Business Development Executive (Kodu | Powered by Dhurina):</strong> Excelled in sales of coding courses, enhanced student engagement through video meetings.</li>
-        <li><strong>Tutoring & Mentorship:</strong> Taught multiple subjects to students (Grades 5–10), strengthening my fundamentals and communication skills.</li>
-        <li><strong>Tech & AI Enthusiast:</strong> Automated tasks using AI tools, improving efficiency in Excel, presentations, and content creation.</li>
-        <li><strong>Web Development:</strong> Currently building a website in JavaScript using ChatGPT, showcasing my adaptability in programming.</li>
-      </ul>
-      <p><strong class="bullet-heading">🔹 Education & Certifications</strong></p>
-      <ul>
-        <li><strong>BSc (Hons) Mathematics:</strong> MRSPTU (Expected Graduation: May 2025)</li>
-        <li><strong>IIT JEE Mains Qualified:</strong> Strong foundation in advanced mathematics and problem-solving</li>
-        <li><strong>Self-Learning & Online Courses:</strong> AI tools, programming, and business analytics</li>
-      </ul>
-      <p><strong class="bullet-heading">🔹 Personal Insights</strong></p>
-      <p>
-        A self-motivated individual, I have been financially independent since 2021, covering all my expenses while managing academics and work. I enjoy solving complex problems, exploring AI-driven automation, and continuously upskilling in technology and business.
-      </p>
-      <p><strong>📩 Let’s connect!</strong> I’m open to new opportunities in tech, AI automation, logistics, or business development.</p>
+      <div class="section-header">
+        <span class="section-subtitle">About Me</span>
+        <h2>My Background</h2>
+      </div>
+      <div class="about-content">
+        <p class="about-intro">
+          I am a highly analytical and results-driven professional with a strong foundation in mathematics, programming, sales, and logistics. My journey, shaped by perseverance and adaptability, has allowed me to excel in multiple domains, from freight brokerage and business development to AI-driven automation and web development. I thrive in dynamic environments where problem-solving and strategic thinking are key.
+        </p>
+        <p><strong class="bullet-heading">🔹 Key Skills & Expertise</strong></p>
+        <ul>
+          <li><strong>Programming & Technology:</strong> C, C++, Python, JavaScript, AI tools, automation</li>
+          <li><strong>Mathematics & Analysis:</strong> Probability, data handling, geometry, logical reasoning</li>
+          <li><strong>Sales & Business Development:</strong> Cold calling, email marketing, negotiation, customer persuasion</li>
+          <li><strong>Logistics & Freight Brokerage:</strong> Dispatching, TMS, DAT, Truckstop, AFM</li>
+          <li><strong>Financial Management:</strong> Budgeting, investments, cryptocurrency & stock trading</li>
+          <li><strong>Leadership & Event Management:</strong> Team coordination, financial planning, public speaking</li>
+        </ul>
+        <p><strong class="bullet-heading">🔹 Experience & Achievements</strong></p>
+        <ul>
+          <li><strong>Freight Broker & Dispatcher (Varstar Alliance & Elefante Express):</strong> Led high-value sales ($3,000 max, $1,000–$1,300 avg.), managed clients, and optimized logistics.</li>
+          <li><strong>Business Development Executive (Kodu | Powered by Dhurina):</strong> Excelled in sales of coding courses, enhanced student engagement through video meetings.</li>
+          <li><strong>Tutoring & Mentorship:</strong> Taught multiple subjects to students (Grades 5–10), strengthening my fundamentals and communication skills.</li>
+          <li><strong>Tech & AI Enthusiast:</strong> Automated tasks using AI tools, improving efficiency in Excel, presentations, and content creation.</li>
+          <li><strong>Web Development:</strong> Currently building a website in JavaScript using ChatGPT, showcasing my adaptability in programming.</li>
+        </ul>
+        <p><strong class="bullet-heading">🔹 Education & Certifications</strong></p>
+        <ul>
+          <li><strong>BSc (Hons) Mathematics:</strong> MRSPTU (Expected Graduation: May 2025)</li>
+          <li><strong>IIT JEE Mains Qualified:</strong> Strong foundation in advanced mathematics and problem-solving</li>
+          <li><strong>Self-Learning & Online Courses:</strong> AI tools, programming, and business analytics</li>
+        </ul>
+        <p><strong class="bullet-heading">🔹 Personal Insights</strong></p>
+        <p>
+          A self-motivated individual, I have been financially independent since 2021, covering all my expenses while managing academics and work. I enjoy solving complex problems, exploring AI-driven automation, and continuously upskilling in technology and business.
+        </p>
+        <p><strong class="gradient-text">📩 Let's connect!</strong> I'm open to new opportunities in tech, AI automation, logistics, or business development.</p>
+      </div>
     </div>
   </section>
   
   <!-- Skills Section -->
   <section id="skills" class="skills-section">
     <div class="container">
-      <h2>Skills</h2>
+      <div class="section-header">
+        <span class="section-subtitle">My Skills</span>
+        <h2>What I'm Good At</h2>
+      </div>
       <div class="skills-grid">
         <div class="skill">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
           <h3>Programming (C, C++, Python)</h3>
           <div class="progress-bar" data-progress="90">
             <span class="progress-fill"></span>
-            <span class="progress-text">85%</span>
+            <span class="progress-text">90%</span>
           </div>
         </div>
         <div class="skill">
+          <div class="skill-icon">
+            <i class="fas fa-square-root-alt"></i>
+          </div>
           <h3>Mathematical Analysis</h3>
           <div class="progress-bar" data-progress="85">
             <span class="progress-fill"></span>
@@ -112,20 +165,29 @@
           </div>
         </div>
         <div class="skill">
+          <div class="skill-icon">
+            <i class="fas fa-comments"></i>
+          </div>
           <h3>Communication & Negotiation</h3>
           <div class="progress-bar" data-progress="80">
-            <span class="progress-fill"></span>
-            <span class="progress-text">85%</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h3>AI Tools & Automation</h3>
-          <div class="progress-bar" data-progress="75">
             <span class="progress-fill"></span>
             <span class="progress-text">80%</span>
           </div>
         </div>
         <div class="skill">
+          <div class="skill-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>AI Tools & Automation</h3>
+          <div class="progress-bar" data-progress="75">
+            <span class="progress-fill"></span>
+            <span class="progress-text">75%</span>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-icon">
+            <i class="fas fa-users"></i>
+          </div>
           <h3>Sales & Leadership</h3>
           <div class="progress-bar" data-progress="80">
             <span class="progress-fill"></span>
@@ -133,14 +195,10 @@
           </div>
         </div>
         <div class="skill">
-          <h3>Strategic Planning</h3>
-          <div class="progress-bar" data-progress="90">
-            <span class="progress-fill"></span>
-            <span class="progress-text">90%</span>
+          <div class="skill-icon">
+            <i class="fas fa-chess"></i>
           </div>
-        </div>
-        <div class="skill">
-          <h3>Marketing & Branding</h3>
+          <h3>Strategic Planning</h3>
           <div class="progress-bar" data-progress="90">
             <span class="progress-fill"></span>
             <span class="progress-text">90%</span>
@@ -149,46 +207,143 @@
       </div>
     </div>
   </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">My Work</span>
+        <h2>Recent Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/600x400?text=Portfolio+Website" alt="Portfolio Website">
+          </div>
+          <div class="project-content">
+            <h3>Portfolio Website</h3>
+            <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://gagandeepgoyal001.github.io/Gagandeep-Portfolio/" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/gagandeepgoyal001/Gagandeep-Portfolio" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/600x400?text=Barbermania" alt="Barbermania">
+          </div>
+          <div class="project-content">
+            <h3>Barbermania</h3>
+            <p>A barbershop management system built with JavaScript.</p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/gagandeepgoyal001/barbermania" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/600x400?text=CRM+Software" alt="CRM Software">
+          </div>
+          <div class="project-content">
+            <h3>CRM Software</h3>
+            <p>Customer Relationship Management software for business operations.</p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>HTML/CSS</span>
+              <span>Database</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/gagandeepgoyal001/CRM-SOFTWARE" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view-more">
+        <a href="#" class="btn btn-primary">View All Projects</a>
+      </div>
+    </div>
+  </section>
   
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2>Contact</h2>
+      <div class="section-header">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2>Contact Me</h2>
+      </div>
       <div class="contact-wrapper">
         <form id="contactForm" action="https://formspree.io/f/xyzknajz" method="POST">
           <div class="form-group">
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            <div class="input-wrapper">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
           </div>
           <div class="form-group">
             <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <div class="input-wrapper">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
           </div>
           <div class="form-group">
             <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+            <div class="input-wrapper">
+              <i class="fas fa-comment"></i>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+            </div>
           </div>
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn btn-primary">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
           <!-- This element will display messages after submission -->
           <p id="formMsg" class="form-msg"></p>
         </form>
         <div class="contact-info">
-          <h3>Get in Touch</h3>
+          <h3>Let's Connect</h3>
           <div class="contact-links">
             <a href="https://www.linkedin.com/in/gagan-deep-goyal/" target="_blank" class="contact-link">
-              <!-- LinkedIn Icon -->
-              <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.269c-.966 0-1.75-.79-1.75-1.77s.784-1.77 1.75-1.77 1.75.79 1.75 1.77-.784 1.77-1.75 1.77zm13.5 11.269h-3v-5.604c0-1.337-.026-3.062-1.867-3.062-1.87 0-2.157 1.46-2.157 2.968v5.698h-3v-10h2.881v1.367h.041c.402-.761 1.384-1.562 2.847-1.562 3.044 0 3.608 2.005 3.608 4.613v5.582z"/>
-              </svg>
+              <i class="fab fa-linkedin icon"></i>
               LinkedIn
             </a>
             <a href="mailto:goyalgagandeep10@gmail.com" class="contact-link">
-              <!-- Email Icon -->
-              <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 13.065l-11.985-7.065v13h23.97v-13l-11.985 7.065zm11.985-9.065h-23.97l11.985 7.07 11.985-7.07z"/>
-              </svg>
+              <i class="fas fa-envelope icon"></i>
               Email Me
             </a>
+            <a href="tel:+918556896739" class="contact-link">
+              <i class="fas fa-phone icon"></i>
+              +91 8556896739
+            </a>
+            <a href="https://github.com/gagandeepgoyal001" target="_blank" class="contact-link">
+              <i class="fab fa-github icon"></i>
+              GitHub
+            </a>
+          </div>
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.7509553634546!2d74.9195908!3d30.2148287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39173289ea8ed269%3A0x78d87a36a4d3ed8a!2sAnand%20Karyana%20Store!5e0!3m2!1sen!2sin!4v1719747885799!5m2!1sen!2sin"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -198,7 +353,33 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Gagandeep Goyal. All Rights Reserved.</p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3 class="logo">Gagandeep Goyal</h3>
+          <p>A dedicated professional with expertise in programming, mathematics, and problem-solving.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Me</h4>
+          <div class="social-icons">
+            <a href="https://github.com/gagandeepgoyal001" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/gagan-deep-goyal/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gagandeep Goyal. All Rights Reserved.</p>
+        <p>Designed with <i class="fas fa-heart"></i> by Gagandeep Goyal</p>
+      </div>
     </div>
   </footer>
   
