@@ -3,34 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gagandeep Goyal | Portfolio</title>
+  <title>Gagandeep Goyal | Full Stack Developer & Mathematics Expert</title>
+  
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio of Gagandeep Goyal, showcasing skills in programming, leadership, and technical expertise across various projects and experiences." />
-  <meta name="keywords" content="Gagandeep Goyal, Portfolio, Web Developer, Programmer, Mathematics, AI, Leadership" />
-  <!-- Favicon (optional) -->
+  <meta name="description" content="Portfolio of Gagandeep Goyal, a versatile professional with expertise in programming, mathematics, sales, and logistics. View projects and get in touch." />
+  <meta name="keywords" content="Gagandeep Goyal, Web Developer, Programmer, Mathematics, AI, Full Stack, Portfolio" />
+  <meta name="author" content="Gagandeep Goyal" />
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Gagandeep Goyal | Full Stack Developer & Mathematics Expert" />
+  <meta property="og:description" content="Portfolio of Gagandeep Goyal, a versatile professional with expertise in programming, mathematics, sales, and logistics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gagandeepgoyal001.github.io/Gagandeep-Portfolio/" />
+  <meta property="og:image" content="assets/Gagan.png" />
+  
+  <!-- Favicon -->
   <link rel="icon" href="assets/Gagan.png" type="image/png">
-  <!-- Google Fonts -->
+  <link rel="apple-touch-icon" href="assets/Gagan.png">
+  
+  <!-- Preconnect to External Resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Theme Toggle and Back to Top Button -->
-  <div class="theme-toggle">
-    <i class="fas fa-sun"></i>
-    <i class="fas fa-moon"></i>
-  </div>
+  <button class="theme-toggle" aria-label="Toggle dark/light theme">
+    <i class="fas fa-sun" aria-hidden="true"></i>
+    <i class="fas fa-moon" aria-hidden="true"></i>
+  </button>
   
-  <div class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </div>
+  <button class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
   <!-- Preloader -->
-  <div class="preloader">
+  <div class="preloader" aria-hidden="true">
     <div class="loader"></div>
   </div>
 
@@ -38,12 +55,13 @@
   <header class="header">
     <div class="container nav-container">
       <h1 class="logo">Gagandeep Goyal</h1>
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -205,6 +223,45 @@
           </div>
         </div>
       </div>
+      
+      <!-- Career Timeline -->
+      <div class="timeline-section">
+        <h3 class="timeline-title">Professional Journey</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-content">
+              <h4>Web Development</h4>
+              <p>Building websites with JavaScript, HTML, and CSS. Creating portfolio projects and exploring front-end frameworks.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 - 2023</div>
+            <div class="timeline-content">
+              <h4>Business Development Executive</h4>
+              <p>Kodu | Powered by Dhurina - Excelled in sales of coding courses, enhanced student engagement through video meetings.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2021 - 2022</div>
+            <div class="timeline-content">
+              <h4>Freight Broker & Dispatcher</h4>
+              <p>Varstar Alliance & Elefante Express - Led high-value sales, managed clients, and optimized logistics operations.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2021</div>
+            <div class="timeline-content">
+              <h4>Tutoring & Mentorship</h4>
+              <p>Taught multiple subjects to students (Grades 5–10), strengthening fundamentals and communication skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -277,6 +334,85 @@
     </div>
   </section>
   
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Testimonials</span>
+        <h2>What Others Say</h2>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="slider-container">
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                Gagandeep's analytical approach to problem-solving is exceptional. He tackled complex challenges with a clear strategy and delivered outstanding results for our logistics operations.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4>Rajat Sharma</h4>
+                  <span>Operations Manager, Varstar Alliance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                Working with Gagandeep was a pleasure. His technical skills combined with excellent communication made the development process smooth and efficient. I highly recommend his work.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4>Ankit Patel</h4>
+                  <span>Tech Lead, Dhurina</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                Gagandeep's mathematical knowledge and tutoring approach helped my son excel in his studies. His patience and ability to explain complex concepts in a simple manner make him an excellent teacher.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4>Priya Gupta</h4>
+                  <span>Parent of Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="slider-controls">
+          <button class="prev-btn" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+          <button class="next-btn" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <div class="container">
@@ -289,30 +425,33 @@
           <div class="form-group">
             <label for="name">Your Name</label>
             <div class="input-wrapper">
-              <i class="fas fa-user"></i>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required aria-describedby="name-required" />
+              <span id="name-required" class="sr-only">This field is required</span>
             </div>
           </div>
           <div class="form-group">
             <label for="email">Your Email</label>
             <div class="input-wrapper">
-              <i class="fas fa-envelope"></i>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required aria-describedby="email-required" />
+              <span id="email-required" class="sr-only">This field is required</span>
             </div>
           </div>
           <div class="form-group">
             <label for="message">Your Message</label>
             <div class="input-wrapper">
-              <i class="fas fa-comment"></i>
-              <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+              <i class="fas fa-comment" aria-hidden="true"></i>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message" required aria-describedby="message-required"></textarea>
+              <span id="message-required" class="sr-only">This field is required</span>
             </div>
           </div>
           <button type="submit" class="btn btn-primary">
             <span>Send Message</span>
-            <i class="fas fa-paper-plane"></i>
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
           </button>
           <!-- This element will display messages after submission -->
-          <p id="formMsg" class="form-msg"></p>
+          <p id="formMsg" class="form-msg" aria-live="polite"></p>
         </form>
         <div class="contact-info">
           <h3>Let's Connect</h3>
@@ -343,6 +482,8 @@
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              title="Map showing Anand Karyana Store location"
+              aria-label="Google Maps showing my location"
             ></iframe>
           </div>
         </div>
@@ -365,6 +506,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>

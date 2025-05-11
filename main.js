@@ -51,6 +51,15 @@ document.addEventListener('DOMContentLoaded', function() {
     card.style.animationDelay = `${index * 0.1}s`;
     card.classList.add('fade-in');
   });
+  
+  // Initialize GitHub projects
+  fetchGitHubProjects();
+  
+  // Initialize timeline
+  setTimeout(animateTimeline, 500);
+  
+  // Initialize testimonials slider
+  initTestimonialsSlider();
 });
 
 window.addEventListener('scroll', function() {
@@ -58,6 +67,7 @@ window.addEventListener('scroll', function() {
   animateProgressBars();
   revealSections();
   toggleBackToTop();
+  animateTimeline();
 });
 
 // Theme Toggle Functionality
@@ -345,4 +355,240 @@ const observer = new IntersectionObserver((entries) => {
 const statsContainer = document.querySelector('.hero-stats');
 if (statsContainer) {
   observer.observe(statsContainer);
+}
+
+// GitHub Projects Integration
+async function fetchGitHubProjects() {
+  const username = 'gagandeepgoyal001';
+  const projectsContainer = document.querySelector('.projects-grid');
+  const loadingEl = document.createElement('div');
+  loadingEl.className = 'loading-projects';
+  loadingEl.innerHTML = '<div class="loader"></div><p>Loading projects...</p>';
+  
+  // Clear existing project cards
+  if (projectsContainer) {
+    projectsContainer.innerHTML = '';
+    projectsContainer.appendChild(loadingEl);
+    
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`);
+      const repos = await response.json();
+      
+      // Remove loading indicator
+      projectsContainer.removeChild(loadingEl);
+      
+      // Filter and display only non-forked repositories
+      const filteredRepos = repos.filter(repo => !repo.fork).slice(0, 6);
+      
+      if (filteredRepos.length === 0) {
+        // Fallback to static projects if no repos found
+        renderStaticProjects(projectsContainer);
+        return;
+      }
+      
+      for (const repo of filteredRepos) {
+        // Create languages badge
+        let languagesBadges = '';
+        try {
+          const languagesResponse = await fetch(repo.languages_url);
+          const languages = await languagesResponse.json();
+          languagesBadges = Object.keys(languages)
+            .slice(0, 3)
+            .map(lang => `<span>${lang}</span>`)
+            .join('');
+        } catch (error) {
+          console.error('Error fetching languages:', error);
+          languagesBadges = '<span>JavaScript</span>';
+        }
+        
+        // Create project card
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+          <div class="project-image">
+            <img src="https://opengraph.githubassets.com/1/${username}/${repo.name}" alt="${repo.name} project screenshot">
+          </div>
+          <div class="project-content">
+            <h3>${repo.name}</h3>
+            <p>${repo.description || 'A cool project. Check the repository for more details.'}</p>
+            <div class="project-tags">
+              ${languagesBadges}
+            </div>
+            <div class="project-links">
+              ${repo.homepage ? `<a href="${repo.homepage}" class="project-link" target="_blank" aria-label="Visit live site for ${repo.name}"><i class="fas fa-external-link-alt"></i></a>` : ''}
+              <a href="${repo.html_url}" class="project-link" target="_blank" aria-label="View GitHub repository for ${repo.name}"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        `;
+        
+        projectsContainer.appendChild(card);
+        
+        // Add animation with delay
+        setTimeout(() => {
+          card.classList.add('fade-in');
+        }, 100);
+      }
+    } catch (error) {
+      console.error('Error fetching GitHub repos:', error);
+      projectsContainer.removeChild(loadingEl);
+      renderStaticProjects(projectsContainer);
+    }
+  }
+}
+
+// Fallback to static projects if GitHub API fails
+function renderStaticProjects(container) {
+  container.innerHTML = `
+    <div class="project-card fade-in">
+      <div class="project-image">
+        <img src="https://via.placeholder.com/600x400?text=Portfolio+Website" alt="Portfolio Website">
+      </div>
+      <div class="project-content">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+        <div class="project-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://gagandeepgoyal001.github.io/Gagandeep-Portfolio/" class="project-link" target="_blank" aria-label="Visit Portfolio Website"><i class="fas fa-external-link-alt"></i></a>
+          <a href="https://github.com/gagandeepgoyal001/Gagandeep-Portfolio" class="project-link" target="_blank" aria-label="View Portfolio Website repository"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-image">
+        <img src="https://via.placeholder.com/600x400?text=Barbermania" alt="Barbermania">
+      </div>
+      <div class="project-content">
+        <h3>Barbermania</h3>
+        <p>A barbershop management system built with JavaScript.</p>
+        <div class="project-tags">
+          <span>JavaScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" aria-label="Visit Barbermania"><i class="fas fa-external-link-alt"></i></a>
+          <a href="https://github.com/gagandeepgoyal001/barbermania" class="project-link" target="_blank" aria-label="View Barbermania repository"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-image">
+        <img src="https://via.placeholder.com/600x400?text=CRM+Software" alt="CRM Software">
+      </div>
+      <div class="project-content">
+        <h3>CRM Software</h3>
+        <p>Customer Relationship Management software for business operations.</p>
+        <div class="project-tags">
+          <span>JavaScript</span>
+          <span>HTML/CSS</span>
+          <span>Database</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" aria-label="Visit CRM Software"><i class="fas fa-external-link-alt"></i></a>
+          <a href="https://github.com/gagandeepgoyal001/CRM-SOFTWARE" class="project-link" target="_blank" aria-label="View CRM Software repository"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Timeline animation
+function animateTimeline() {
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  
+  timelineItems.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight * 0.8;
+    
+    if (itemTop < triggerPoint) {
+      item.classList.add('visible');
+    }
+  });
+}
+
+// Testimonials Slider
+function initTestimonialsSlider() {
+  const sliderContainer = document.querySelector('.slider-container');
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Initialize slider
+  updateSlider();
+  
+  // Set up event listeners
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    });
+  }
+  
+  // Dot navigation
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      currentIndex = parseInt(dot.getAttribute('data-index'));
+      updateSlider();
+    });
+  });
+  
+  // Touch events for mobile swipe
+  if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    sliderContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swipe left, show next slide
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+      // Swipe right, show previous slide
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+  }
+  
+  function updateSlider() {
+    // Update slide position
+    slides.forEach((slide, index) => {
+      slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+    });
+    
+    // Update active dot
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+  
+  // Auto-advance slides every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+  }, 5000);
 }
